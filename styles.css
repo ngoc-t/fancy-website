@@ -230,7 +230,7 @@ p, body {
     height: 100%;
     background: var(--ink);
     transition: left 0.4s ease;
-    z-index: 0;
+    z-index: -1;
 }
 
 .btn:hover::before {
@@ -238,13 +238,19 @@ p, body {
 }
 
 .btn:hover {
-    color: white;
+    color: white !important;
     transform: translateY(-2px);
+}
+
+.btn:hover * {
+    color: white !important;
+    z-index: 2;
+    position: relative;
 }
 
 .btn > * {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .btn-primary {
@@ -260,12 +266,29 @@ p, body {
 .btn-primary:hover {
     background: var(--accent-dark);
     border-color: var(--accent-dark);
+    color: white !important;
+}
+
+.btn-primary:hover * {
+    color: white !important;
+    z-index: 2;
+    position: relative;
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--ink);
     border: 1px solid var(--ink);
+}
+
+.btn-secondary:hover {
+    color: white !important;
+}
+
+.btn-secondary:hover * {
+    color: white !important;
+    z-index: 2;
+    position: relative;
 }
 
 .btn-large {
