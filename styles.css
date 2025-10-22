@@ -504,21 +504,21 @@ p, body {
 
 .hero-visual {
     position: relative;
-    animation: luxurySlideInRight 1.2s ease-out;
+/*     animation: luxurySlideInRight 1.2s ease-out; */
 }
 
 .flower-image {
     width: 100%;
     height: auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: all 0.4s ease;
+/*     border-radius: var(--radius);
+    box-shadow: var(--shadow); */
+/*     transition: all 0.4s ease; */
 }
 
-.flower-image:hover {
+/* .flower-image:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-accent);
-}
+} */
 
 /* Section Styles */
 section {
@@ -739,6 +739,7 @@ section {
     opacity: 0.9;
     line-height: 1.7;
     font-weight: 300;
+    color: white;
 }
 
 .pricing-features {
