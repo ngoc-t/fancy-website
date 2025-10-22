@@ -26,6 +26,15 @@ body {
   font-style: italic;
 }
 
+/* Ensure header stays fixed */
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+}
+
 .serif-font {
   font-family: 'Georgia', serif;
 }
