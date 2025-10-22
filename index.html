@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Florist | Flowers Around You</title>
+    <meta name="description" content="Premium floral arrangements in Phnom Penh. Handcrafted luxury bouquets with FREE next-day delivery. Express love, celebrate life, create unforgettable moments.">
+    <meta name="keywords" content="flowers Phnom Penh, luxury bouquets, same day delivery, wedding flowers, anniversary flowers">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fancyflorist.com/">
+    <meta property="og:title" content="Fancy Florist | Flower Shop in Phnom Penh">
+    <meta property="og:description" content="Premium floral arrangements with FREE next-day delivery. Handcrafted luxury bouquets for every special moment.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="./logo.png">
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SVG Sprite System -->
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- Botanical Corner Flourish -->
+            <symbol id="leaf-corner" viewBox="0 0 100 100">
+                <path d="M20 80 Q30 70 40 75 Q50 80 60 70 Q70 60 80 65 Q90 70 85 80 Q80 90 70 85 Q60 80 50 90 Q40 100 30 95 Q20 90 20 80 Z" 
+                      fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            </symbol>
+            
+            <!-- Ornamental Divider -->
+            <symbol id="divider-ornate" viewBox="0 0 200 20">
+                <path d="M20 10 Q50 5 80 10 Q110 15 140 10 Q170 5 180 10" 
+                      fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                <circle cx="100" cy="10" r="3" fill="currentColor"/>
+                <path d="M95 7 L100 2 L105 7 M95 13 L100 18 L105 13" 
+                      fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            </symbol>
+            
+            <!-- Rose Icon -->
+            <symbol id="rose" viewBox="0 0 24 24">
+                <path d="M12 2 C8 6 4 8 4 12 C4 16 8 20 12 20 C16 20 20 16 20 12 C20 8 16 6 12 2 Z" 
+                      fill="none" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M12 4 C10 7 8 9 8 12 C8 14 10 16 12 16 C14 16 16 14 16 12 C16 9 14 7 12 4 Z" 
+                      fill="currentColor" opacity="0.3"/>
+            </symbol>
+            
+            <!-- Bouquet Icon -->
+            <symbol id="bouquet" viewBox="0 0 24 24">
+                <path d="M8 16 L12 20 L16 16 M10 14 L14 18 M6 12 L18 12 M4 10 L20 10" 
+                      fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                <circle cx="8" cy="8" r="2" fill="currentColor"/>
+                <circle cx="16" cy="6" r="2" fill="currentColor"/>
+                <circle cx="12" cy="4" r="2" fill="currentColor"/>
+            </symbol>
+            
+            <!-- Delivery Van Icon -->
+            <symbol id="van" viewBox="0 0 24 24">
+                <path d="M3 12 L8 12 L8 6 L18 6 L18 12 L21 12 L21 18 L18 18 L18 16 L6 16 L6 18 L3 18 Z" 
+                      fill="none" stroke="currentColor" stroke-width="1.25"/>
+                <circle cx="7" cy="18" r="2" fill="currentColor"/>
+                <circle cx="17" cy="18" r="2" fill="currentColor"/>
+            </symbol>
+            
+            <!-- Credit Card Icon -->
+            <symbol id="credit-card" viewBox="0 0 24 24">
+                <path d="M3 6 L21 6 L21 18 L3 18 Z" fill="none" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M3 10 L21 10" stroke="currentColor" stroke-width="1.25"/>
+            </symbol>
+            
+            <!-- Map Pin Icon -->
+            <symbol id="map-pin" viewBox="0 0 24 24">
+                <path d="M12 2 C8 2 5 5 5 9 C5 14 12 22 12 22 C12 22 19 14 19 9 C19 5 16 2 12 2 Z" 
+                      fill="none" stroke="currentColor" stroke-width="1.25"/>
+                <circle cx="12" cy="9" r="3" fill="currentColor"/>
+            </symbol>
+            
+            <!-- Phone Icon -->
+            <symbol id="phone" viewBox="0 0 24 24">
+                <path d="M6 2 L18 2 L18 22 L6 22 Z" fill="none" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M8 6 L16 6 M8 18 L16 18" stroke="currentColor" stroke-width="1.25"/>
+            </symbol>
+            
+            <!-- Email Icon -->
+            <symbol id="email" viewBox="0 0 24 24">
+                <path d="M4 4 L20 4 L20 20 L4 20 Z" fill="none" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M4 8 L12 14 L20 8" stroke="currentColor" stroke-width="1.25"/>
+            </symbol>
+            
+            <!-- Quote Marks Icon -->
+            <symbol id="quote-marks" viewBox="0 0 24 24">
+                <path d="M6 6 L10 6 L10 14 L6 14 Z M14 6 L18 6 L18 14 L14 14 Z" 
+                      fill="none" stroke="currentColor" stroke-width="1.25"/>
+            </symbol>
+            
+            <!-- Star Icon -->
+            <symbol id="star" viewBox="0 0 24 24">
+                <path d="M12 2 L15 8 L22 8 L17 12 L19 19 L12 15 L5 19 L7 12 L2 8 L9 8 Z" 
+                      fill="currentColor" stroke="none"/>
+            </symbol>
+            
+            <!-- Calendar Icon -->
+            <symbol id="calendar" viewBox="0 0 24 24">
+                <path d="M3 6 L21 6 L21 20 L3 20 Z" fill="none" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M8 2 L8 6 M16 2 L16 6 M3 10 L21 10" stroke="currentColor" stroke-width="1.25"/>
+            </symbol>
+            
+            <!-- Clock Icon -->
+            <symbol id="clock" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M12 6 L12 12 L16 14" stroke="currentColor" stroke-width="1.25"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Botanical Flourishes (Background) -->
+    <div class="botanical-flourishes">
+        <svg class="flourish flourish-1"><use href="#leaf-corner"/></svg>
+        <svg class="flourish flourish-2"><use href="#leaf-corner"/></svg>
+        <svg class="flourish flourish-3"><use href="#leaf-corner"/></svg>
+        <svg class="flourish flourish-4"><use href="#leaf-corner"/></svg>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <svg class="logo-icon" width="28" height="28"><use href="#bouquet"/></svg>
+                    <span class="logo-text">Fancy Florist</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#collections" class="nav-link">Collections</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-cta">
+                    <a href="tel:+855123456789" class="btn btn-primary">Order Now</a>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" style="background-image: url('hero-bg.jpg');">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Not your average bouquet.</span>
+                    <span class="title-line highlight"></span>
+                </h1>
+                <p class="hero-subtitle">
+                    Thoughtfully crafted arrangements for life’s most meaningful moments.
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <svg class="feature-icon" width="20" height="20"><use href="#bouquet"/></svg>
+                        <span>100% freshness guaranteed</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" width="20" height="20"><use href="#rose"/></svg>
+                        <span>Handcrafted by expert florists using premium stems</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" width="20" height="20"><use href="#van"/></svg>
+                        <span>FREE next-day delivery when you order by 6pm</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#collections" class="btn btn-primary btn-large">Shop Exclusive Designs</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                    <img src="header-flowers.png" alt="Beautiful flowers" class="flower-image">
+               <!--  <div class="flower-showcase"> -->
+              <!--       <div class="flower-main">
+                        <svg class="flower-svg" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="80" fill="#fef7f0" stroke="#f4a261" stroke-width="2"/>
+                            <circle cx="100" cy="100" r="60" fill="#e9c46a" opacity="0.3"/>
+                            <circle cx="100" cy="100" r="40" fill="#f77f00" opacity="0.4"/>
+                            <circle cx="100" cy="100" r="20" fill="#d62828" opacity="0.6"/>
+                            <text x="100" y="105" text-anchor="middle" font-size="24" fill="#2d1b69">💐</text>
+                        </svg>
+                    </div> -->
+                   <!--  <div class="floating-elements">
+                        <svg class="floating-petal petal-1" width="24" height="24"><use href="#rose"/></svg>
+                        <svg class="floating-petal petal-2" width="24" height="24"><use href="#bouquet"/></svg>
+                        <svg class="floating-petal petal-3" width="24" height="24"><use href="#rose"/></svg>
+                        <svg class="floating-petal petal-4" width="24" height="24"><use href="#bouquet"/></svg>
+                        <svg class="floating-petal petal-5" width="24" height="24"><use href="#rose"/></svg>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Fancy Florist?</h2>
+<!--                 <p class="section-subtitle">Every flower tells a story. Here's why people trust us with their most important moments:</p>
+ -->            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <svg class="feature-icon-large" width="48" height="48"><use href="#van"/></svg>
+                    <h3>Never Miss a Moment</h3>
+                    <p>Forgot about an important date? Call us & get flowers delivered now.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <svg class="feature-icon-large" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Freshness You Can Feel</h3>
+                    <p>Every bloom is handpicked daily for lasting beauty.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <svg class="feature-icon-large" width="48" height="48"><use href="#rose"/></svg>
+                    <h3>Exclusive Designs</h3>
+                    <p>Luxury arrangements you won't find anywhere else.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <svg class="feature-icon-large" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Made Just for You</h3>
+                    <p>Tell us what you need, we'll craft something unforgettable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-badge">About Us</div>
+                    <h2 class="section-title">Flowers That Brighten Life</h2>
+                    <p class="about-description">
+                        Fancy Florist is a boutique floral studio in Phnom Penh, specializing in luxury arrangements.
+                    </p>
+                    <p class="about-description">
+                        Every bouquet is handcrafted with premium, exquisite blooms and quiet attention to detail.
+                        Designed to add meaning and beauty to special moments, impress your guests, or say what words can't.
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Happy Customers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Delivery Service</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-image">
+                        <img src="about-shop.jpg" alt="Fancy Florist shop interior in Phnom Penh" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-banner">
+                <div class="pricing-content">
+                    <h2 class="pricing-title">
+                        Elegant compositions from $29
+                       <!--  <span class="highlight">from $29</span> -->
+                    </h2>
+                    <p class="pricing-subtitle">
+                        Discover handcrafted arrangements for every occasion and price point.
+                    </p>
+                    <div class="pricing-features"><!-- 
+                        <span class="pricing-feature"><svg width="16" height="16" style="margin-right: 8px;"><use href="#credit-card"/></svg>Flexible Payment</span>
+                        <span class="pricing-feature"><svg width="16" height="16" style="margin-right: 8px;"><use href="#bouquet"/></svg>Free Gift Wrapping</span> -->
+                        <span class="pricing-feature"><svg width="16" height="16" style="margin-right: 8px;"><use href="#van"/></svg>Free Delivery</span>
+                    </div>
+                </div>
+                <div class="pricing-cta">
+                    <a href="#collections" class="btn btn-primary btn-large">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Shop Special Collection</div>
+                <h2 class="section-title">Best Sellers</h2>
+                <p class="section-subtitle">
+                    Whether you need a bouquet, vase, or custom arrangement, we have something for every taste and budget.
+                    Explore our most popular arrangements, crafted with love and delivered fresh to your doorstep.
+                </p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="zoom-in">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="classic-rose-bouquet.jpg" alt="Classic Rose Bouquet" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Classic Rose Bouquet</h3>
+                        <p class="product-description">Elegant and timeless, perfect for any occasion.</p>
+                        <div class="product-price">$35.00</div>
+                        <button class="btn btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-badge new">New</div>
+                    <div class="product-image">
+                        <img src="orchid-harmony.jpg" alt="Orchid Harmony arrangement" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Orchid Harmony</h3>
+                        <p class="product-description">Exotic and vibrant, a stunning statement piece.</p>
+                        <div class="product-price">$45.00</div>
+                        <button class="btn btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-badge new">New</div>
+                    <div class="product-image">
+                        <img src="lily-delight.jpg" alt="Lily Delight bouquet" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Lily Delight</h3>
+                        <p class="product-description">Fragrant and graceful, a touch of sophistication.</p>
+                        <div class="product-price">$40.00</div>
+                        <button class="btn btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-image">
+                        <img src="mixed-bouquet.jpg" alt="Mixed Bouquet arrangement" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mixed Bouquet</h3>
+                        <p class="product-description">Fresh and colorful, offering incredible value for money.</p>
+                        <div class="product-price">$29.00</div>
+                        <button class="btn btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Services</div>
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-subtitle">
+                    From everyday bouquets to custom event styling, Fancy Florist offers comprehensive floral services 
+                    that make every occasion unforgettable.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="service-icon" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Fresh Flowers</h3>
+                    <p>Vibrant blooms handpicked daily for maximum beauty.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="48" height="48"><use href="#rose"/></svg>
+                    <h3>Luxury Arrangements</h3>
+                    <p>Hand-tied masterpieces for any occasion.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Artificial Floral Arrangements</h3>
+                    <p>Lifelike, lasting beauty for timeless decor.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Gift Baskets</h3>
+                    <p>Elegant baskets with flowers and gourmet treats.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="48" height="48"><use href="#rose"/></svg>
+                    <h3>Seasonal Arrangements</h3>
+                    <p>Curated blooms celebrating each season's charm.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Corporate Flowers</h3>
+                    <p>Professional, stylish arrangements for offices and events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flower Types Section -->
+    <section class="flower-types">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop by Flower Type</h2>
+                <p class="section-subtitle">
+                    From seasonal flowers celebrating nature's beauty to exotic blooms that make a statement, 
+                    and wildflowers bringing rustic charm – we have every type your heart desires.
+                </p>
+            </div>
+            <div class="flower-grid">
+                <div class="flower-item" data-aos="fade-up">
+                    <svg class="flower-emoji" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h4>Orchids</h4>
+                    <p>Exotic elegance for special moments.</p>
+                </div>
+                <div class="flower-item" data-aos="fade-up" data-aos-delay="50">
+                    <svg class="flower-emoji" width="48" height="48"><use href="#rose"/></svg>
+                    <h4>Roses</h4>
+                    <p>Classic beauty for every occasion.</p>
+                </div>
+                <div class="flower-item" data-aos="fade-up" data-aos-delay="100">
+                    <svg class="flower-emoji" width="48" height="48"><use href="#rose"/></svg>
+                    <h4>Tulips</h4>
+                    <p>Vibrant colors to brighten your day.</p>
+                </div>
+                <div class="flower-item" data-aos="fade-up" data-aos-delay="150">
+                    <svg class="flower-emoji" width="48" height="48"><use href="#rose"/></svg>
+                    <h4>Lilies</h4>
+                    <p>Graceful and fragrant, perfect for any setting.</p>
+                </div>
+                <div class="flower-item" data-aos="fade-up" data-aos-delay="200">
+                    <svg class="flower-emoji" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h4>Dahlia</h4>
+                    <p>Bold and beautiful, a statement of style.</p>
+                </div>
+                <div class="flower-item" data-aos="fade-up" data-aos-delay="250">
+                    <svg class="flower-emoji" width="48" height="48"><use href="#rose"/></svg>
+                    <h4>Jasmine</h4>
+                    <p>Delicate and aromatic, a touch of romance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Occasions Section -->
+    <section class="occasions">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop by Popular Occasions</h2>
+                <p class="section-subtitle">Make every event memorable with our special arrangements. Whatever you want to say, say it with flowers:</p>
+            </div>
+            <div class="occasions-grid">
+                <div class="occasion-card" data-aos="zoom-in">
+                    <svg class="occasion-icon" width="48" height="48"><use href="#calendar"/></svg>
+                    <h3>Birthday</h3>
+                    <p>Bright, cheerful bouquets to mark every special year.</p>
+                </div>
+                <div class="occasion-card" data-aos="zoom-in" data-aos-delay="100">
+                    <svg class="occasion-icon" width="48" height="48"><use href="#rose"/></svg>
+                    <h3>Anniversary</h3>
+                    <p>Express your love with elegant flowers.</p>
+                </div>
+                <div class="occasion-card" data-aos="zoom-in" data-aos-delay="200">
+                    <svg class="occasion-icon" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Get Well Soon</h3>
+                    <p>Brighten their day with cheerful arrangements.</p>
+                </div>
+                <div class="occasion-card" data-aos="zoom-in" data-aos-delay="300">
+                    <svg class="occasion-icon" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Thank You</h3>
+                    <p>Show your appreciation with thoughtful floral gifts.</p>
+                </div>
+                <div class="occasion-card" data-aos="zoom-in" data-aos-delay="400">
+                    <svg class="occasion-icon" width="48" height="48"><use href="#rose"/></svg>
+                    <h3>Congratulations</h3>
+                    <p>Celebrate achievements with stunning bouquets.</p>
+                </div>
+                <div class="occasion-card" data-aos="zoom-in" data-aos-delay="500">
+                    <svg class="occasion-icon" width="48" height="48"><use href="#bouquet"/></svg>
+                    <h3>Wedding</h3>
+                    <p>Timeless floral artistry to make your big day unforgettable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Orders Section -->
+    <section class="custom-orders">
+        <div class="container">
+            <div class="custom-content">
+                <div class="custom-text">
+                    <div class="section-badge">Custom Orders</div>
+                    <h2 class="section-title">Can't find exactly what you're looking for?</h2>
+                    <p class="custom-description">
+                        Let us create a custom arrangement just for you. From custom arrangements to full event styling, 
+                        we make the impossible possible.
+                    </p>
+                    <div class="custom-features">
+                        <div class="custom-feature">
+                            <svg class="feature-icon" width="32" height="32"><use href="#rose"/></svg>
+                            <div>
+                                <h4>Custom Orders</h4>
+                                <p>Can't find what you want? We'll design it for you.</p>
+                            </div>
+                        </div>
+                        <div class="custom-feature">
+                            <svg class="feature-icon" width="32" height="32"><use href="#bouquet"/></svg>
+                            <div>
+                                <h4>Gift Baskets</h4>
+                                <p>Gourmet treats paired with floral beauty.</p>
+                            </div>
+                        </div>
+                        <div class="custom-feature">
+                            <svg class="feature-icon" width="32" height="32"><use href="#calendar"/></svg>
+                            <div>
+                                <h4>Event Packages</h4>
+                                <p>Full-service styling for weddings, parties, & corporate events.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary btn-large">Contact us</a>
+                </div>
+                <div class="custom-visual">
+                    <div class="custom-image">
+                        <img src="custom-design.jpg" alt="Custom floral arrangement design process" class="custom-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Testimonials</div>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real stories from real people who've experienced the Fancy Florist magic.</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="testimonial-avatar">
+                        <img src="customer-sarah.jpg" alt="Sarah Johnson - Happy Customer" class="testimonial-img">
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "Fancy Florist delivered the most beautiful arrangement for my anniversary. The flowers were fresh, 
+                        the design was unique, and the delivery was perfect. My husband was absolutely speechless – 
+                        and that's saying something! Highly recommended!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Sarah Johnson</div>
+                        <div class="author-title">Happy Customer</div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <svg class="star" width="20" height="20"><use href="#star"/></svg>
+                        <svg class="star" width="20" height="20"><use href="#star"/></svg>
+                        <svg class="star" width="20" height="20"><use href="#star"/></svg>
+                        <svg class="star" width="20" height="20"><use href="#star"/></svg>
+                        <svg class="star" width="20" height="20"><use href="#star"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="section-badge">Contact Us</div>
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p class="contact-description">
+                        We would love to hear from you! Fill out the form below, or contact us directly via email or phone.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg class="contact-icon" width="24" height="24"><use href="#map-pin"/></svg>
+                            <div>
+                                <h4>Visit Our Studio</h4>
+                                <p>Phnom Penh, Cambodia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" width="24" height="24"><use href="#phone"/></svg>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p><a href="tel:+855123456789">+855 123 456 789</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" width="24" height="24"><use href="#email"/></svg>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:hello@fancyflorist.com">hello@fancyflorist.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-cta">
+                        <a href="tel:+855123456789" class="btn btn-primary btn-large">Contact Us</a>
+                        <p class="contact-urgency">Available 24/7 for your convenience</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">Occasion</label>
+                            <select id="occasion" name="occasion">
+                                <option value="">Select an occasion</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="get-well">Get Well Soon</option>
+                                <option value="thank-you">Thank You</option>
+                                <option value="congratulations">Congratulations</option>
+                                <option value="custom">Custom Order</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Vision</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Describe your perfect arrangement or any special requests..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Follow Us</div>
+                <h2 class="section-title">Stay Connected</h2>
+                <p class="section-subtitle">
+                    Follow us on social media for the latest updates, exclusive offers, and floral inspiration.
+                </p>
+            </div>
+            <div class="instagram-grid">
+                <div class="instagram-item">
+                    <img src="instagram-1.jpg" alt="Floral arrangement" class="instagram-img">
+                </div>
+                <div class="instagram-item">
+                    <img src="instagram-2.jpg" alt="Bouquet design" class="instagram-img">
+                </div>
+                <div class="instagram-item">
+                    <img src="instagram-3.jpg" alt="Custom arrangement" class="instagram-img">
+                </div>
+                <div class="instagram-item">
+                    <img src="instagram-4.jpg" alt="Wedding flowers" class="instagram-img">
+                </div>
+                <div class="instagram-item">
+                    <img src="instagram-5.jpg" alt="Seasonal blooms" class="instagram-img">
+                </div>
+                <div class="instagram-item">
+                    <img src="instagram-6.jpg" alt="Gift basket" class="instagram-img">
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">TikTok</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" width="28" height="28"><use href="#bouquet"/></svg>
+                        <span class="logo-text">Fancy Florist</span>
+                    </div>
+                    <p class="footer-description">
+                        Boutique floral studio in Phnom Penh, specializing in luxury arrangements 
+                        with premium, exquisite blooms that make every moment unforgettable.
+                    </p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">📱</a>
+                        <a href="#" class="social-icon">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#collections">Collections</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Same Day Delivery</a></li>
+                            <li><a href="#">Custom Arrangements</a></li>
+                            <li><a href="#">Wedding Flowers</a></li>
+                            <li><a href="#">Corporate Events</a></li>
+                            <li><a href="#">Gift Baskets</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li>📍 Phnom Penh, Cambodia</li>
+                            <li>📞 <a href="tel:+855123456789">+855 123 456 789</a></li>
+                            <li>✉️ <a href="mailto:hello@fancyflorist.com">hello@fancyflorist.com</a></li>
+                            <li>🕒 24/7 Delivery Available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Fancy Florist. All rights reserved.</p>
+                </div>
+                <div class="footer-payment">
+                    <svg class="payment-icon" width="24" height="24"><use href="#credit-card"/></svg>
+                    <svg class="payment-icon" width="24" height="24"><use href="#credit-card"/></svg>
+                    <svg class="payment-icon" width="24" height="24"><use href="#credit-card"/></svg>
+                    <svg class="payment-icon" width="24" height="24"><use href="#credit-card"/></svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

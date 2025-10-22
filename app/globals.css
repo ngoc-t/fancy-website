@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F8F5F0;
+}
+
+.container-content {
+  max-width: 1200px;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-ink text-ink tracking-wide uppercase text-[12px] hover:bg-ink hover:text-white transition-colors;
+}
+
+.eyebrow {
+  @apply text-eyebrow uppercase tracking-[0.18em] text-stone-600;
+}
+
+.script-font {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.serif-font {
+  font-family: 'Georgia', serif;
+}
