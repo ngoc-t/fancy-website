@@ -69,45 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize animations
     animateOnScroll();
     
-    // Floating petals animation
-    function createFloatingPetal() {
-        const petals = ['🌸', '🌺', '🌷', '🌻', '🌹', '💐', '🌼'];
-        const petal = document.createElement('div');
-        petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
-        petal.style.position = 'fixed';
-        petal.style.left = Math.random() * 100 + 'vw';
-        petal.style.top = '100vh';
-        petal.style.fontSize = (Math.random() * 20 + 10) + 'px';
-        petal.style.pointerEvents = 'none';
-        petal.style.zIndex = '1000';
-        petal.style.opacity = '0.7';
-        petal.style.animation = 'floatUp 8s linear forwards';
-        
-        document.body.appendChild(petal);
-        
-        setTimeout(() => {
-            petal.remove();
-        }, 8000);
-    }
-    
-    // Add floating petals periodically
-    setInterval(createFloatingPetal, 3000);
-    
-    // Add floating animation CSS
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    // Floating petals animation removed - using CSS petal animations instead
     
     // Button hover effects
     document.querySelectorAll('.btn').forEach(button => {
@@ -392,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             document.head.appendChild(easterEggStyle);
             
-            showNotification('🌸 Konami Code Activated! 🌸', 'success');
+            showNotification('Konami Code Activated!', 'success');
             
             setTimeout(() => {
                 document.body.style.animation = '';
@@ -403,51 +365,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Initialize everything
-    console.log('🌸 Fancy Florist website loaded successfully! 🌸');
+    console.log('Fancy Florist website loaded successfully!');
     
-    // Add some sparkle to the page
-    function addSparkle() {
-        const sparkle = document.createElement('div');
-        sparkle.innerHTML = '✨';
-        sparkle.style.position = 'fixed';
-        sparkle.style.left = Math.random() * 100 + 'vw';
-        sparkle.style.top = Math.random() * 100 + 'vh';
-        sparkle.style.fontSize = '20px';
-        sparkle.style.pointerEvents = 'none';
-        sparkle.style.zIndex = '1000';
-        sparkle.style.animation = 'sparkle 2s ease-out forwards';
-        
-        document.body.appendChild(sparkle);
-        
-        setTimeout(() => sparkle.remove(), 2000);
-    }
-    
-    // Add sparkle animation
-    const sparkleStyle = document.createElement('style');
-    sparkleStyle.textContent = `
-        @keyframes sparkle {
-            0% {
-                opacity: 0;
-                transform: scale(0) rotate(0deg);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1) rotate(180deg);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(0) rotate(360deg);
-            }
-        }
-    `;
-    document.head.appendChild(sparkleStyle);
-    
-    // Add sparkles occasionally
-    setInterval(addSparkle, 5000);
+    // Sparkle animations removed for cleaner design
     
     // Welcome message
     setTimeout(() => {
-        showNotification('Welcome to Fancy Florist! 🌸', 'success');
+        showNotification('Welcome to Fancy Florist!', 'success');
     }, 1000);
 });
 
