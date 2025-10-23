@@ -364,6 +364,124 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Instagram Integration
+    function loadInstagramPhotos() {
+        const instagramGrid = document.getElementById('instagram-grid');
+        if (!instagramGrid) return;
+        
+        // Configuration - Fancy Florist Instagram Integration
+        const INSTAGRAM_CONFIG = {
+            // Instagram account details
+            username: 'fancyflorist_kh',
+            profileUrl: 'https://www.instagram.com/fancyflorist_kh/',
+            
+            // Option 1: Use Instagram Basic Display API (requires app setup)
+            accessToken: 'YOUR_INSTAGRAM_ACCESS_TOKEN', // Replace with your token
+            userId: 'YOUR_INSTAGRAM_USER_ID', // Replace with your user ID
+            
+            // Option 2: Use a third-party service (recommended for easier setup)
+            useThirdParty: true, // Set to true to use fallback method
+            fallbackPhotos: [
+                'https://images.unsplash.com/photo-1563241527-3004b7be5468?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1563241527-3004b7be5468?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1563241527-3004b7be5468?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1563241527-3004b7be5468?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            ]
+        };
+        
+        // Function to create Instagram photo elements
+        function createInstagramPhoto(photoUrl, index) {
+            const photoItem = document.createElement('div');
+            photoItem.className = 'instagram-item';
+            photoItem.setAttribute('data-aos', 'zoom-in');
+            photoItem.setAttribute('data-aos-delay', (index * 100).toString());
+            
+            const img = document.createElement('img');
+            img.src = photoUrl;
+            img.alt = `Instagram photo ${index + 1}`;
+            img.className = 'instagram-img';
+            img.loading = 'lazy';
+            
+            // Add click handler to open Instagram profile
+            photoItem.addEventListener('click', function() {
+                window.open(INSTAGRAM_CONFIG.profileUrl, '_blank');
+            });
+            
+            photoItem.appendChild(img);
+            return photoItem;
+        }
+        
+        // Function to fetch Instagram photos via API
+        async function fetchInstagramPhotos() {
+            if (INSTAGRAM_CONFIG.useThirdParty || !INSTAGRAM_CONFIG.accessToken) {
+                return INSTAGRAM_CONFIG.fallbackPhotos;
+            }
+            
+            try {
+                const response = await fetch(
+                    `https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink&access_token=${INSTAGRAM_CONFIG.accessToken}`
+                );
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch Instagram photos');
+                }
+                
+                const data = await response.json();
+                const imagePhotos = data.data
+                    .filter(item => item.media_type === 'IMAGE')
+                    .slice(0, 8)
+                    .map(item => item.media_url);
+                
+                return imagePhotos.length > 0 ? imagePhotos : INSTAGRAM_CONFIG.fallbackPhotos;
+            } catch (error) {
+                console.warn('Instagram API error:', error);
+                return INSTAGRAM_CONFIG.fallbackPhotos;
+            }
+        }
+        
+        // Load and display photos
+        async function displayInstagramPhotos() {
+            try {
+                const photos = await fetchInstagramPhotos();
+                
+                // Clear loading state
+                instagramGrid.innerHTML = '';
+                
+                // Create photo elements
+                photos.slice(0, 8).forEach((photoUrl, index) => {
+                    const photoElement = createInstagramPhoto(photoUrl, index);
+                    instagramGrid.appendChild(photoElement);
+                });
+                
+                // Trigger animations
+                setTimeout(() => {
+                    animateOnScroll();
+                }, 100);
+                
+            } catch (error) {
+                console.error('Error loading Instagram photos:', error);
+                
+                // Show error state
+                instagramGrid.innerHTML = `
+                    <div class="instagram-error" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                        <p style="color: var(--muted); margin-bottom: 1rem;">Unable to load Instagram photos</p>
+                        <button onclick="loadInstagramPhotos()" class="btn btn-secondary">Try Again</button>
+                    </div>
+                `;
+            }
+        }
+        
+        // Initialize Instagram photos
+        displayInstagramPhotos();
+    }
+    
+    // Load Instagram photos when DOM is ready
+    loadInstagramPhotos();
+    
     // Initialize everything
     console.log('Fancy Florist website loaded successfully!');
     
